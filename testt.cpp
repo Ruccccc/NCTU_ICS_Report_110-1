@@ -1,21 +1,24 @@
 #include<iostream>
+#include<list>
 using namespace std;
 typedef unsigned long size_t;
 
-template <typename T>
 struct node
 {
-    T data;
-    node<T> *next = new node<T>;
+    int data;
+    node *next;
 };
 
 int main()
 {
-    node<int> *a;
-    a = NULL;
-    node<int> *b;
+
+    node *a = new node();
+    node *b = new node();
+
     b->data = 1;
     b->next = NULL;
     a->next = b;
-    cout << a->next->data;
+
+    if (b->next == NULL) cout << "Yes\n";
+    
 }
