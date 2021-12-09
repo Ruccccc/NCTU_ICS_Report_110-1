@@ -8,6 +8,7 @@ int main()
     for (int i = 1; i <= 10; i++)
         l.push_back(i);
     
+    cout << "----\n";
     while(1)
     {
         string c;
@@ -33,18 +34,18 @@ int main()
         {
             l.pop_front();
         }
-        if (c == "popb") 
+        if (c == "popb")
         {
             l.pop_back();
         }
-        if (c == "i")
+        if (c == "i") // error
         {
             int pos, data;
             cout << "pos and data:";
             cin >> pos >> data;
             l.insert(pos, data);
         }
-        if (c == "d")
+        if (c == "d") 
         {
             int pos;
             cin >> pos;
@@ -52,7 +53,7 @@ int main()
         }
         if (c == "p")
         {
-            
+            cout << l << "\n";
         }
         cout << "\n";
     }

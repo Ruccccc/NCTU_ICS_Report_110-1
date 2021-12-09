@@ -16,10 +16,21 @@ private:
     size_t _size = 0;
 
 public:
+
+    // initialize
     list()
     {
-        head = NULL;
-        tail = NULL;
+        head = new node<T>;
+        tail = new node<T>;
+        tail->next = NULL;
+    }
+
+    // return head
+    node<T>* begin()
+    {
+        node<int>* n = new node<T>;
+        n = head;
+        return n->next;
     }
 
     // return the number of element.
@@ -35,7 +46,7 @@ public:
         _new_node->data = __new;
         _new_node->next = NULL;
 
-        if (head == NULL) // when the list is empty.
+        if (head->next == NULL) // when the list is empty.
         {
             head->next = _new_node;
             tail = _new_node;
@@ -56,7 +67,7 @@ public:
         _new_node->data = _new;
         _new_node->next = NULL;
         
-        if (head == NULL) // when the list is empty.
+        if (head->next == NULL) // when the list is empty.
         {
             head->next = _new_node;
             tail = _new_node;
@@ -77,7 +88,7 @@ public:
             return;
         
         node<T> *_tmp = head->next;
-        head = _tmp->next;
+        head = _tmp;
 
         delete _tmp;
 
@@ -141,13 +152,19 @@ public:
         _previous->next = _current->next;
     }
 
-    /*
-    // add another list in front.
-    void merge(list<T> _x)
+    friend std::ostream& operator<<(std::ostream& os, list<T> &l)
     {
-
+        node<T>* n = new node<T>;
+        n = l.begin();
+        while (n != NULL)
+        {
+            os << n->data;
+            n = n->next;
+            if (n != NULL)
+                os << " ";
+        }
+        return os;
     }
-    */
 
-   
+
 };
