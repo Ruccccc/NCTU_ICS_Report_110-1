@@ -45,7 +45,7 @@ int main()
             cin >> pos >> data;
             l.insert(pos, data);
         }
-        if (c == "d") 
+        if (c == "d")
         {
             int pos;
             cin >> pos;

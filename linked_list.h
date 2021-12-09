@@ -123,13 +123,13 @@ public:
         node<T> *_current = new node<T>;
         _current = head;
 
-        node<T> *_new_node;
+        node<T> *_new_node = new node<T>;
         _new_node->data = _new;
 
-        for (int i = 1; i <_position; i++)
+        for (int i = 0; i <_position; i++)
         {
             _previous = _current;
-            _current = _current->next;
+            _current  = _current->next;
         }
 
         _previous->next = _new_node;
@@ -140,13 +140,13 @@ public:
     void del(int _position)
     {
         node<T> *_previous = new node<T>;
-        node<T> *_current = new node<T>;
+        node<T> *_current  = new node<T>;
         _current = head;
 
-        for (int i = 1; i < _position; i++)
+        for (int i = 0; i < _position; i++)
         {
             _previous = _current;
-            _current = _current->next;
+            _current  = _current->next;
         }
 
         _previous->next = _current->next;
