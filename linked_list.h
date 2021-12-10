@@ -1,3 +1,4 @@
+#include<iostream>
 typedef unsigned long size_t;
 
 template <typename T>
@@ -28,15 +29,25 @@ public:
     // return head
     node<T>* begin()
     {
-        node<int>* n = new node<T>;
+        node<T>* n = new node<T>;
         n = head;
         return n->next;
+    }
+
+    node<T>* end()
+    {
+        return tail;
     }
 
     // return the number of element.
     size_t size()
     {
         return _size;
+    }
+
+    bool empty()
+    {
+        return size==0;
     }
 
     // push a new node in the begin.
