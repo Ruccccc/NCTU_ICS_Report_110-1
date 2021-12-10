@@ -6,21 +6,40 @@ class queue
 {
 private:
 
-    list<T> 
+    list<T> basis;
+
     size_t _size = 0;
 
 public:
 
-    void push_back(T _new);
+    void push_back(T _new)
+    {
+        basis.push_back(_new);
+    }
 
-    void push_front(T _new);
+    void push_front(T _new)
+    {
+        basis.push_front(_new);
+    }
 
-    T pop_back();
+    T pop_back()
+    {
+        basis.pop_back();
+    }
 
-    T pop_front();
+    T pop_front()
+    {
+        basis.pop_front();
+    }
 
-    T top();
+    T top()
+    {
+        basis.get(0);
+    }
 
-    T back();
+    T back()
+    {
+        basis.get(basis.size());
+    }
 
 };

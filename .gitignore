@@ -5,3 +5,5 @@
 .vscode
 
 *.dSYM
+
+*.out
