@@ -14,7 +14,7 @@
 #include <iostream>
 
 template <typename T>
-class myvector
+class vector
 {
     
 private:
@@ -99,7 +99,7 @@ public:
     }
     
     // delete first element_to_pop.
-    // return the 
+    // return the index of the element.
     size_t erase(T element_to_pop)
     {
         int index = find(element_to_pop);
@@ -127,7 +127,7 @@ public:
         return -1;
     }
 /*
-    friend std::ostream& operator<<(std::ostream& os, myvector<T> &v)
+    friend std::ostream& operator<<(std::ostream& os, vector<T> &v)
     {
         for (int i = 0; i < v.size(); i++)
         {

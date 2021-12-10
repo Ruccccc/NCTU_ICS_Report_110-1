@@ -136,7 +136,7 @@ public:
         _new_node->next = _current;
     }
 
-    // delete 
+    // delete the element of the input index.
     void del(int _position)
     {
         node<T> *_previous = new node<T>;
@@ -166,4 +166,5 @@ public:
         return os;
     }
 
+    
 };
