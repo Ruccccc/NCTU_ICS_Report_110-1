@@ -12,8 +12,8 @@ template <typename T>
 class list
 {
 private:
-    node<T> *head;
-    node<T> *tail;
+    node<T> *head; // head has no data.
+    node<T> *tail; // tail is the last data.
     size_t _size = 0;
 
 public:
@@ -161,6 +161,19 @@ public:
         }
 
         _previous->next = _current->next;
+    }
+
+    // get the data on the input position.
+    T get(int _pos)
+    {
+        node<T>* n = head->next;
+
+        for (int i = 0; i < _pos; i++)
+        {
+            n = n->next;
+        }
+
+        return n->data;
     }
 
     friend std::ostream& operator<<(std::ostream& os, list<T> &l)

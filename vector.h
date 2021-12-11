@@ -1,16 +1,3 @@
-/*
-    Filename : 09_09_110652011_b.h
-    Auther   : 110652011 郭佳翰
-    Descript : define a class simailar to vector with function:
-               1. size
-               2. capacity
-               3. resize
-               4. push
-               5. pop
-               6. delete
-               7. erase
-               8. find
-*/
 #include <iostream>
 
 template <typename T>
@@ -126,7 +113,7 @@ public:
         
         return -1;
     }
-/*
+
     friend std::ostream& operator<<(std::ostream& os, vector<T> &v)
     {
         for (int i = 0; i < v.size(); i++)
@@ -137,7 +124,7 @@ public:
         }
         return os;
     }
-*/
+
     T operator[](int _index)
     {
         return ptr[_index];
