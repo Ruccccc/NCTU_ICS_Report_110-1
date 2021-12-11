@@ -125,7 +125,7 @@ public:
         return os;
     }
 
-    T operator[](int _index)
+    T& operator[](int _index)
     {
         return ptr[_index];
     }

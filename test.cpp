@@ -1,5 +1,6 @@
-#include<iostream>
-#include<list>
+#include <iostream>
+#include <list>
+#include <vector>
 using namespace std;
 typedef unsigned long size_t;
 
@@ -12,13 +13,12 @@ struct node
 int main()
 {
 
-    node *a = new node();
-    node *b = new node();
-
-    b->data = 1;
-    b->next = NULL;
-    a->next = b;
-
-    if (b->next == NULL) cout << "Yes\n";
+    vector<int> v;
     
+    for (int i = 0; i < 10; i++)
+    {
+        v.push_back(i);
+    }
+
+    cout << v[11];
 }
