@@ -7,3 +7,5 @@
 *.dSYM
 
 *.out
+
+test.cpp
