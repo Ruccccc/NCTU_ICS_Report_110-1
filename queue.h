@@ -1,4 +1,4 @@
-#include <iostream>
+typedef unsigned long size_t;
 #include "linked_list.h"
 
 template <typename T>
@@ -8,31 +8,19 @@ private:
 
     list<T> basis;
 
-    size_t _size = 0;
-
 public:
 
-    void push_back(T _new)
+    void push(T _new)
     {
         basis.push_back(_new);
     }
 
-    void push_front(T _new)
-    {
-        basis.push_front(_new);
-    }
-
-    T pop_back()
-    {
-        basis.pop_back();
-    }
-
-    T pop_front()
+    T pop()
     {
         basis.pop_front();
     }
 
-    T top()
+    T front()
     {
         basis.get(0);
     }
@@ -40,6 +28,11 @@ public:
     T back()
     {
         basis.get(basis.size());
+    }
+
+    size_t size()
+    {
+        basis.size();
     }
 
 };

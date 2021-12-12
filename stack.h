@@ -1,5 +1,5 @@
-#include<iostream>
 #include "linked_list.h"
+typedef unsigned long size_t;
 
 template <typename T>
 class stack
@@ -24,7 +24,7 @@ public:
         return a.size() == 0; 
     }
 
-    void push(int x)
+    void push(T x)
     {
         a.push_front(x);
     }
