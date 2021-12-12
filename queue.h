@@ -34,7 +34,6 @@ public:
 
     T top()
     {
-<<<<<<< HEAD
         basis.get(0);
     }
 
@@ -42,11 +41,5 @@ public:
     {
         basis.get(basis.size());
     }
-=======
-        
-    }
-
-    T back();
->>>>>>> 04f4c2cbcccb4e0c5a2dd53de68394bcd14a7cce
 
 };
