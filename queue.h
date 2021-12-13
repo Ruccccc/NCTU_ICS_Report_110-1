@@ -17,22 +17,24 @@ public:
 
     T pop()
     {
+        T x = basis.get(0);
         basis.pop_front();
+        return x;
     }
 
     T front()
     {
-        basis.get(0);
+        return basis.get(0);
     }
 
     T back()
     {
-        basis.get(basis.size());
+        return basis.get(basis.size()-1);
     }
 
     size_t size()
     {
-        basis.size();
+        return basis.size();
     }
 
 };
