@@ -1,10 +1,10 @@
 #include <iostream>
-#include "vector.h"
+#include "Dynamic_array.h"
 using namespace std;
 
 int main()
 {
-    vector<int> v;
+    DA<int> v;
 
     v.resize(10);
 

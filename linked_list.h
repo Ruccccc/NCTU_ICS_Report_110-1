@@ -47,7 +47,7 @@ public:
 
     bool empty()
     {
-        return size==0;
+        return _size==0;
     }
 
     // push a new node in the begin.
@@ -189,6 +189,4 @@ public:
         }
         return os;
     }
-
-    
 };
