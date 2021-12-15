@@ -1,18 +1,32 @@
 #include <iostream>
 
 template <typename T>
-class vector
+class DA
 {
     
 private:
 
     // declare dynamic array.
-    T* ptr = new T[1];
+    T* ptr;
 
     size_t _size = 0;
     size_t _capacity = 1;
 
 public:
+
+    DA()
+    {
+        ptr = new T[_capacity];
+    }
+
+    DA(std::initializer_list<T> _list)
+    {
+        ptr = new T[_capacity];
+        for (auto i : _list)
+        {
+            push(i);
+        }
+    }
 
     // return the number of element.
     size_t size()
@@ -21,7 +35,7 @@ public:
     }
 
     // return capacity.
-    size_t capcasity()
+    size_t capacity()
     {
         return _capacity;
     }
@@ -114,7 +128,7 @@ public:
         return -1;
     }
 
-    friend std::ostream& operator<<(std::ostream& os, vector<T> &v)
+    friend std::ostream& operator<<(std::ostream& os, DA<T> &v)
     {
         for (int i = 0; i < v.size(); i++)
         {

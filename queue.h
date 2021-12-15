@@ -10,6 +10,11 @@ private:
 
 public:
 
+    queue()
+    {
+        list<T> basis;
+    }
+
     // new a element to the end of queue.
     void push(T _new)
     {

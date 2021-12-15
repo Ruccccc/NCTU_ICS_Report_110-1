@@ -4,14 +4,7 @@ using namespace std;
 
 int main()
 {
-    DA<int> v;
-
-    v.resize(10);
-
-    for (int i = 0; i < 10; i++)
-    {
-        v.push(i);
-    }
+    DA<int> da{1, 2, 3, 4, 5};
 
     while (1)
     {
@@ -23,33 +16,33 @@ int main()
         {
             cout << "    ";
             int x; cin >> x;
-            v.push(x);
+            da.push(x);
         }
         else if (s == "d")
         {
             cout << "    ";
             int x; cin >> x;
-            v.del(x);
+            da.del(x);
         }
         else if (s == "s")
         {
-            cout << v.size() << "\n";
+            cout << da.size() << "\n";
         }
         else if (s == "w")
         {
             cout << "    ";
             int x; cin >> x;
-            cout << v[x] << "\n";
+            cout << da[x] << "\n";
         }
         else if (s == "e")
         {
             cout << "    ";
             int x; cin >> x;
-            v.erase(x);
+            da.erase(x);
         }
         else if (s == "p")
         {
-            cout << v << "\n";
+            cout << da << "\n";
         }
         else
         {
