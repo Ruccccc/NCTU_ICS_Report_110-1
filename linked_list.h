@@ -1,5 +1,6 @@
+#pragma once // avoid recompile
+
 #include<iostream>
-typedef unsigned long size_t;
 
 template <typename T>
 struct node
@@ -22,6 +23,7 @@ public:
     list()
     {
         head = new node<T>;
+        head->next = nullptr;
         tail = new node<T>;
         tail->next = NULL;
     }

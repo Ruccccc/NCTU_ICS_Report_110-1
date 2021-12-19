@@ -1,3 +1,5 @@
+#pragma once // avoid recompile
+
 #include <iostream>
 
 template <typename T>

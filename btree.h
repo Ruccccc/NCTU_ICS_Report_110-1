@@ -15,11 +15,11 @@ class bt
 {
 private:
 
-    tnode* root;
+    tnode* root = new tnode;
 
 public:
 
-    bt (DA<int> _init_data)
+    bt (DA<int> _init_data) //bfs
     {
         queue<tnode*> q;
         q.push(root);
