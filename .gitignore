@@ -9,3 +9,5 @@
 *.out
 
 test.cpp
+
+.DS_Store
