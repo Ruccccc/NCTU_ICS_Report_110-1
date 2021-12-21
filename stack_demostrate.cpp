@@ -1,15 +1,19 @@
-#include<iostream>
-#include"stack.h"
+#include <iostream>
+#include "stack.h"
 using namespace std;
 
-int main(){
+int main()
+{
     stack<int> s;
-    for(int i=0;i<10;i++){
+    for (int i = 0; i < 10; i++)
+    {
         s.push(i);
     }
-    for(int i=0;i<10;i++){
-        cout<<s.size()<<" "<<s.top()<<endl;
+    for (int i = 0; i < 10; i++)
+    {
+        cout << s.size() << " " << s.top() << "\n";
         s.pop();
     }
+    
     return 0;
 }

@@ -23,7 +23,7 @@ public:
     list()
     {
         head = new node<T>;
-        head->next = nullptr;
+        head->next = NULL;
         tail = new node<T>;
         tail->next = NULL;
     }

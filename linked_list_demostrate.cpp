@@ -6,6 +6,9 @@ int main()
 {
     list<int> l;
 
+    for (int i = 0; i < 10; i++)
+        l.push_back(i);
+    
     while(1)
     {
         cout << ">>> ";
@@ -43,7 +46,7 @@ int main()
         }
 
         // pop_back
-        else if (c == "ppb")
+        else if (c == "ppb") // bug?
         {
             l.pop_back();
         }
@@ -87,4 +90,6 @@ int main()
 
         cout << "\n";
     }
+
+    return 0;
 }
