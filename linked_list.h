@@ -49,7 +49,7 @@ public:
 
     bool empty()
     {
-        return _size==0;
+        return _size == 0;
     }
 
     // push a new node in the begin.
@@ -101,7 +101,7 @@ public:
             return;
         
         node<T> *_tmp = head->next;
-        head = _tmp;
+        head->next = _tmp->next;
 
         delete _tmp;
 

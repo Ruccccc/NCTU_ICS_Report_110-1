@@ -8,9 +8,20 @@ int main()
 
     bt t(_data);
 
+    cout << "DFS\n";
     t.dfs();
+    cout << "\n";
 
-    t.bfs();
+    //cout << "BFS\n";
+    //t.bfs();
 
     return 0;
 }
+
+/*
+
+           1
+       2      7
+     3   6   X 8
+    4 5
+*/
