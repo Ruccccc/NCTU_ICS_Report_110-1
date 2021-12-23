@@ -47,6 +47,7 @@ public:
         return _size;
     }
 
+    // check if list is empty.
     bool empty()
     {
         return _size == 0;
