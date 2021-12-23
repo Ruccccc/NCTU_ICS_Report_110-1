@@ -36,6 +36,7 @@ public:
         return n->next;
     }
 
+    // return tail
     node<T>* end()
     {
         return tail;

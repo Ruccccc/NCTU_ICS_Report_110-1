@@ -72,22 +72,4 @@ public:
                 stk.push(_current->left_child);
         }
     }
-    /*
-    void bfs()
-    {
-        queue<tnode*> que;
-        que.push(root);
-        
-        while (!que.empty())
-        {
-            tnode* _current = que.front();
-            que.pop();
-            if (_current->left_child != NULL)
-                que.push(_current->left_child);
-            if (_current->right_child != NULL)
-                que.push(_current->right_child);
-            std::cout << _current->data << " ";
-        }
-    }
-    */
 };
