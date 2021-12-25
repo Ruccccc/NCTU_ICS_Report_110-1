@@ -8,43 +8,14 @@ int main()
     queue<int> q;
 
     // push 1 ~ 10 into q.
-    for (int i = 1; i <= 10; i++)
-    {
+    for (int i = 0; i < 10; i++)
         q.push(i);
-    }
 
-    // 
-    while (1)
+    cout << "size\tfront\t\n";
+
+    while (!q.empty())
     {
-        string s;
-        cout << ">>> ";
-        cin >> s;
-
-        if (s == "push")
-        {
-            cout << "    ";
-            int x; cin >> x;
-            q.push(x);
-        }
-        else if (s == "pop")
-        {
-            q.pop();
-        }
-        else if (s == "front")
-        {
-            cout << q.front() << "\n";
-        }
-        else if (s == "back")
-        {
-            cout << q.back() << "\n";
-        }
-        else if (s == "size")
-        {
-            cout << q.size() << "\n";
-        }
-        else
-        {
-            cout << "command not found\n";
-        }
+        cout << q.size() << "\t" << q.front() << "\t\n";
+        q.pop();
     }
 }

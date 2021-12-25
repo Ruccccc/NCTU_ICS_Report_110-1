@@ -8,9 +8,10 @@ int main()
     for (int i = 0; i < 10; i++)
         s.push(i);
     
+    cout << "size\ttop\t\n";
     while (!s.empty())
     {
-        cout << s.size() << " " << s.top() << "\n";
+        cout << s.size() << "\t" << s.top() << "\t\n";
         s.pop();
     }
     
