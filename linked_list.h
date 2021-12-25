@@ -141,7 +141,7 @@ public:
         node<T> *_new_node = new node<T>;
         _new_node->data = _new;
 
-        for (int i = 0; i <_position; i++)
+        for (int i = 0; i <_position+1; i++)
         {
             _previous = _current;
             _current  = _current->next;
@@ -158,7 +158,7 @@ public:
         node<T> *_current  = new node<T>;
         _current = head;
 
-        for (int i = 0; i < _position; i++)
+        for (int i = 0; i < _position+1; i++)
         {
             _previous = _current;
             _current  = _current->next;
