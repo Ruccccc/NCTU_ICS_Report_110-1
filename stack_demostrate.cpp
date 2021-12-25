@@ -6,10 +6,9 @@ int main()
 {
     stack<int> s;
     for (int i = 0; i < 10; i++)
-    {
         s.push(i);
-    }
-    for (int i = 0; i < 10; i++)
+    
+    while (!s.empty())
     {
         cout << s.size() << " " << s.top() << "\n";
         s.pop();
