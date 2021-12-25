@@ -93,9 +93,9 @@ public:
     // delete the element on the index.
     void del(int index_to_del)
     {
-        if (index_to_del > _size) return;
+        if (index_to_del >= _size) return;
         
-        for (int i = index_to_del; i < _size - 2; i++)
+        for (int i = index_to_del; i < _size - 1; i++)
             ptr[i] = ptr[i+1];
         
         _size--;
