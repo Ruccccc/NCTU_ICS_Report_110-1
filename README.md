@@ -69,5 +69,40 @@
     - delete a new node at a position.
     - O(n)
 
+## stack
+### member function
+- size
+    - return the number of elements.
+- empty
+    - return if the stack is empty.
+- push
+    - add a element at top.
+    - O(1)
+- pop
+    - delete the element at top.
+    - O(1)
+- top
+    - return the element at top.
+
 ## queue
-### 
+### member function
+- push
+    - add a element in the end.
+    - O(n)
+- pop
+    - delete the first element.
+- front
+    - return the first element.
+    - O(1)
+- end
+    - return the last element.
+    - O(1)
+- size
+    - return the number of elements.
+    - O(1)
+- empty
+    - return if queue is empty.
+
+## tree
+    - construct with level-order
+    - print with dfs

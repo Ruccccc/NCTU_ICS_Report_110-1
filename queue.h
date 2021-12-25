@@ -36,7 +36,7 @@ public:
     // return the last element of queue.
     T back()
     {
-        return basis.get(basis.size()-1);
+        return basis.end()->data;
     }
 
     // return the number of element of queue

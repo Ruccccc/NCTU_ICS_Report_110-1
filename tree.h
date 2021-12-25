@@ -11,7 +11,7 @@ struct tnode
     int data;
 };
 
-class bt
+class tree
 {
 private:
 
@@ -19,7 +19,7 @@ private:
 
 public:
 
-    bt (DA<int> _init_data) // bfs
+    tree (DA<int> _init_data) // bfs
     {
         queue<tnode*> q;
         tnode *_current = root;
