@@ -14,36 +14,10 @@ private:
     size_t _size = 0;
     size_t _capacity = 1;
 
-public:
-
-    DA()
-    {
-        ptr = new T[_capacity];
-    }
-
-    DA(std::initializer_list<T> _list)
-    {
-        ptr = new T[_capacity];
-        for (auto i : _list)
-        {
-            push(i);
-        }
-    }
-
-    // return the number of element.
-    size_t size()
-    {
-        return _size;
-    }
-
-    // return capacity.
-    size_t capacity()
-    {
-        return _capacity;
-    }
-
-    // adjust the capacity.
-    void resize(int _new_size)
+protected:
+    
+    // adjust the capacity
+    void expand(int _new_size)
     {
         if (_new_size == _capacity)
         {
@@ -68,15 +42,51 @@ public:
 
             delete [] ptr;
             ptr = _tmp_ptr;
-            _size = _capacity = _new_size;
+            _capacity = _new_size;
         }
+    }
+
+public:
+
+    DA()
+    {
+        ptr = new T[_capacity];
+    }
+
+    // initialize with initializer_list.
+    DA(std::initializer_list<T> _list)
+    {
+        ptr = new T[_capacity];
+        for (auto i : _list)
+        {
+            push(i);
+        }
+    }
+
+    // return the number of element.
+    size_t size()
+    {
+        return _size;
+    }
+
+    // return capacity.
+    size_t capacity()
+    {
+        return _capacity;
+    }
+
+    // adjust the capacity.
+    void resize(int _new_size)
+    {
+        expand(_new_size);
+        _size = _new_size;
     }
 
     // add a new element at end.
     void push(T a)
     {
         if (_size == _capacity)
-            resize(_capacity*2);
+            expand(_capacity*2);
         
         ptr[_size] = a;
         _size++;
@@ -145,4 +155,14 @@ public:
     {
         return ptr[_index];
     }
+
+    void operator=(DA<int> _assign)
+    {
+        resize(_assign.size());
+        for (int i = 0; i < _assign.size(); i++)
+        {
+            ptr[i] = _assign[i];
+        }
+    }
+    
 };
