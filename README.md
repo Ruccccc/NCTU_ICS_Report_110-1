@@ -104,5 +104,5 @@
     - return if queue is empty.
 
 ## tree
-    - construct with level-order
-    - print with dfs
+- construct with level-order
+- print with dfs
