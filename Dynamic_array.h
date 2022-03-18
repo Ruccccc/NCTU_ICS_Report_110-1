@@ -5,9 +5,8 @@
 template <typename T>
 class DA
 {
-    
-private:
 
+private:
     // declare dynamic array.
     T* ptr;
 
@@ -15,7 +14,6 @@ private:
     size_t _capacity = 1;
 
 protected:
-    
     // adjust the capacity
     void expand(int _new_size)
     {
@@ -25,11 +23,11 @@ protected:
         }
         else if (_new_size > _capacity)
         {
-            T *_tmp_ptr = new T[_new_size];
+            T* _tmp_ptr = new T[_new_size];
             for (int i = 0; i < _size; i++)
                 _tmp_ptr[i] = ptr[i];
-            
-            delete [] ptr;
+
+            delete[] ptr;
             ptr = _tmp_ptr;
             _capacity = _new_size;
         }
@@ -40,14 +38,13 @@ protected:
             for (int i = 0; i < _new_size; i++)
                 _tmp_ptr[i] = ptr[i];
 
-            delete [] ptr;
+            delete[] ptr;
             ptr = _tmp_ptr;
             _capacity = _new_size;
         }
     }
 
 public:
-
     DA()
     {
         ptr = new T[_capacity];
@@ -86,31 +83,31 @@ public:
     void push(T a)
     {
         if (_size == _capacity)
-            expand(_capacity*2);
-        
+            expand(_capacity * 2);
+
         ptr[_size] = a;
         _size++;
     }
-    
+
     // delete the last element of array.
     T pop()
     {
-        T deleted = ptr[_size-1];
+        T deleted = ptr[_size - 1];
         _size--;
         return deleted;
     }
-    
+
     // delete the element on the index.
     void del(int index_to_del)
     {
         if (index_to_del >= _size) return;
-        
+
         for (int i = index_to_del; i < _size - 1; i++)
-            ptr[i] = ptr[i+1];
-        
+            ptr[i] = ptr[i + 1];
+
         _size--;
     }
-    
+
     // delete first element_to_pop.
     // return the index of the element.
     size_t erase(T element_to_pop)
@@ -118,9 +115,9 @@ public:
         int index = find(element_to_pop);
         if (index != -1)
         {
-            for (int i = index; i < _size-1; i++)
-                ptr[i] = ptr[i+1];
-        
+            for (int i = index; i < _size - 1; i++)
+                ptr[i] = ptr[i + 1];
+
             _size--;
             return index;
         }
@@ -136,16 +133,16 @@ public:
             if (ptr[i] == element_to_find)
                 return i;
         }
-        
+
         return -1;
     }
 
-    friend std::ostream& operator<<(std::ostream& os, DA<T> &v)
+    friend std::ostream& operator<<(std::ostream& os, DA<T>& v)
     {
         for (int i = 0; i < v.size(); i++)
         {
             os << v.ptr[i];
-            if (i != v.size()-1)
+            if (i != v.size() - 1)
                 os << " ";
         }
         return os;
@@ -164,5 +161,20 @@ public:
             ptr[i] = _assign[i];
         }
     }
-    
+
+    void swap(DA<int>& _x)
+    {
+        int* tmp;
+        tmp = _x.ptr;
+        _x.ptr = ptr;
+        ptr = tmp;
+
+        int tmpp = _x._capacity;
+        _x._capacity = _capacity;
+        _capacity = tmpp;
+
+        tmpp = _x._size;
+        _x._size = _size;
+        _size = tmpp;
+    }
 };
