@@ -50,6 +50,21 @@ public:
         ptr = new T[_capacity];
     }
 
+    DA(int __size)
+    {
+        ptr = new T[__size];
+        _size = _capacity = __size;
+    }
+
+    DA(int __size, T _init)
+    {
+        ptr = new T[__size];
+        _size = _capacity = __size;
+
+        for (int i = 0; i < __size; i++)
+            ptr[i] = _init;
+    }
+
     // initialize with initializer_list.
     DA(std::initializer_list<T> _list)
     {
@@ -137,6 +152,7 @@ public:
         return -1;
     }
 
+    // output
     friend std::ostream& operator<<(std::ostream& os, DA<T>& v)
     {
         for (int i = 0; i < v.size(); i++)
@@ -148,11 +164,13 @@ public:
         return os;
     }
 
+    // get element.
     T& operator[](int _index)
     {
         return ptr[_index];
     }
 
+    // assign
     void operator=(DA<int> _assign)
     {
         resize(_assign.size());
@@ -161,7 +179,8 @@ public:
             ptr[i] = _assign[i];
         }
     }
-
+    
+    // swap two DA.
     void swap(DA<int>& _x)
     {
         int* tmp;
